@@ -107,7 +107,11 @@ call plug#begin('~\vimfiles\plugged')
 
 " 安裝nerdtree
 
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+
 
 " 結束 vim-plug設定
 call plug#end()
