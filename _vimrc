@@ -26,6 +26,7 @@ set laststatus=2                  " 狀態列常駐
 set cmdheight=2                   " 減少hit-enter的次數? 需要理解文件!
 set number                        " 加入行號
 set tabstop=4                     " 設定tab 鍵的顯示長度為4
+set autoread					  " 設定自動偵測檔案是否變動並更新
 
 if !has('gui_running')            " 偵測是否為gui 版的vim
   set mouse=                      " 取消支援滑鼠
@@ -111,6 +112,8 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+" Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
+" let g:mkdp_path_to_chrome = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
 
 
 " 結束 vim-plug設定
