@@ -1,0 +1,1 @@
+--disable-nls --enable-gui=no --enable-python3interp=dynamic --with-python3-command=python36 --enable-fail-if-missing --enable-cscope --enable-multibyte --with-features=huge --with-tlib=ncurses --without-x
