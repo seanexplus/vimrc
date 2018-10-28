@@ -119,6 +119,7 @@ Plug 'previm/previm', { 'for': 'markdown' }
 Plug 'vim-scripts/dbext.vim', { 'for': 'sql' }
 Plug 'Valloric/YouCompleteMe'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'w0rp/ale'
 " Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
 " let g:mkdp_path_to_chrome = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
 
@@ -145,3 +146,13 @@ let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 " 確認 ~/.cache/tags 不存在的話就產生
 if !isdirectory(s:vim_tags)
    silent! call mkdir(s:vim_tags, 'p')
+endif
+
+" let g:ale_linters_explicit = 1
+" let g:ale_completion_delay = 500
+" let g:ale_echo_delay = 20
+" let g:ale_lint_delay = 500
+" let g:ale_echo_msg_format = '[%linter%] %code: %%s'
+" let g:ale_lint_on_text_changed = 'normal'
+" let g:ale_lint_on_insert_leave = 1
+" let g:airline#extensions#ale#enabled = 1
