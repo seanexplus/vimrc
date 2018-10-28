@@ -157,6 +157,8 @@ endif
 " let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 " let g:ale_lint_on_text_changed = 'normal'
 " let g:ale_lint_on_insert_leave = 1
+" 設定YCM 的Extra Config檔案路徑
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 " let g:airline#extensions#ale#enabled = 1
 " 由於跟YCM的hotkey相衝，所以修改deLimitMe的熱鍵設定
 imap <C-K> <Plug>delimitMateS-Tab
