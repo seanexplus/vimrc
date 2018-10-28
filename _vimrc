@@ -118,6 +118,7 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'previm/previm', { 'for': 'markdown' }
 Plug 'vim-scripts/dbext.vim', { 'for': 'sql' }
 Plug 'Valloric/YouCompleteMe'
+Plug 'Raimondi/delimitMate'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'w0rp/ale'
 " Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
@@ -156,3 +157,5 @@ endif
 " let g:ale_lint_on_text_changed = 'normal'
 " let g:ale_lint_on_insert_leave = 1
 " let g:airline#extensions#ale#enabled = 1
+" 由於跟YCM的hotkey相衝，所以修改deLimitMe的熱鍵設定
+imap <C-K> <Plug>delimitMateS-Tab
