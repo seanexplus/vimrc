@@ -149,16 +149,19 @@ let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 if !isdirectory(s:vim_tags)
    silent! call mkdir(s:vim_tags, 'p')
 endif
-
-" let g:ale_linters_explicit = 1
-" let g:ale_completion_delay = 500
-" let g:ale_echo_delay = 20
-" let g:ale_lint_delay = 500
-" let g:ale_echo_msg_format = '[%linter%] %code: %%s'
-" let g:ale_lint_on_text_changed = 'normal'
-" let g:ale_lint_on_insert_leave = 1
 " 設定YCM 的Extra Config檔案路徑
 let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+" ale 相關設定
+let g:ale_linters_explicit = 1
+let g:ale_completion_delay = 500
+let g:ale_echo_delay = 20
+let g:ale_lint_delay = 500
+let g:ale_echo_msg_format = '[%linter%] %code: %%s'
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+let g:ale_linters = {'cpp': ['cppcheck'], 'java': ['javac']}
+let g:ale_c_cppcheck_options = ''
+let g:ale_cpp_cppcheck_options = ''
 " let g:airline#extensions#ale#enabled = 1
 " 由於跟YCM的hotkey相衝，所以修改deLimitMe的熱鍵設定
 imap <C-K> <Plug>delimitMateS-Tab
