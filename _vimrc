@@ -93,6 +93,9 @@ let &statusline .= "%=%l,%c%V %P"
 " 色彩模版的設定
 colorscheme torte
 
+" ctag設定
+set tags=./.tags;,.tags
+
 try
   silent hi CursorIM
 catch /E411/
@@ -114,9 +117,30 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'previm/previm', { 'for': 'markdown' }
 Plug 'vim-scripts/dbext.vim', { 'for': 'sql' }
+Plug 'ludovicchabant/vim-gutentags'
 " Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
 " let g:mkdp_path_to_chrome = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
 
 
 " 結束 vim-plug設定
 call plug#end()
+" 開啟gutentags的進階指令，通常用來Debug
+" let g:gutentags_define_advanced_commands = 1
+" gutentags 搜尋專案目錄的標記，遇到這些文件/目錄名稱就停止向上層目錄搜尋
+let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+
+" 設定gutentags產生的檔案名稱
+let g:gutentags_ctags_tagfile = '.tags'
+
+" 將自動生成的tags檔案放在~/.cache/tags 目錄，避免污染專案目錄
+let s:vim_tags = expand('~/.cache/tags')
+let g:gutentags_cache_dir = s:vim_tags
+
+" 設定ctags的參數
+let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+
+" 確認 ~/.cache/tags 不存在的話就產生
+if !isdirectory(s:vim_tags)
+   silent! call mkdir(s:vim_tags, 'p')
