@@ -121,6 +121,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'Raimondi/delimitMate'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'w0rp/ale'
+Plug 'mhinz/vim-signify'
 " Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
 " let g:mkdp_path_to_chrome = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
 
