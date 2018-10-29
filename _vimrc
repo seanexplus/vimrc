@@ -61,29 +61,29 @@ noremap! <4-MiddleMouse> <Nop>
 
 "-------------------------------------------------------------------------------
 " 狀態列設定
-let &statusline = "%<%f %m%r%h%w[%{&ff}][%{(&fenc!=''?&fenc:&enc).(&bomb?':bom':'')}] "
-if has('iconv')
-  let &statusline .= "0x%{FencB()}"
-
-  function! FencB()
-    let c = matchstr(getline('.'), '.', col('.') - 1)
-    if c != ''
-      let c = iconv(c, &enc, &fenc)
-      return s:Byte2hex(s:Str2byte(c))
-    else
-      return '0'
-    endif
-  endfunction
-  function! s:Str2byte(str)
-    return map(range(len(a:str)), 'char2nr(a:str[v:val])')
-  endfunction
-  function! s:Byte2hex(bytes)
-    return join(map(copy(a:bytes), 'printf("%02X", v:val)'), '')
-  endfunction
-else
-  let &statusline .= "0x%B"
-endif
-let &statusline .= "%=%l,%c%V %P"
+" let &statusline = "%<%f %m%r%h%w[%{&ff}][%{(&fenc!=''?&fenc:&enc).(&bomb?':bom':'')}] "
+" if has('iconv')
+"   let &statusline .= "0x%{FencB()}"
+" 
+"   function! FencB()
+"     let c = matchstr(getline('.'), '.', col('.') - 1)
+"     if c != ''
+"       let c = iconv(c, &enc, &fenc)
+"       return s:Byte2hex(s:Str2byte(c))
+"     else
+"       return '0'
+"     endif
+"   endfunction
+"   function! s:Str2byte(str)
+"     return map(range(len(a:str)), 'char2nr(a:str[v:val])')
+"   endfunction
+"   function! s:Byte2hex(bytes)
+"     return join(map(copy(a:bytes), 'printf("%02X", v:val)'), '')
+"   endfunction
+" else
+"   let &statusline .= "0x%B"
+" endif
+" let &statusline .= "%=%l,%c%V %P"
 
 "-------------------------------------------------------------------------------
 " 移除原本的檔案編碼設定段落，等之後更了解Vim 再考慮補上 ファイルエンコーディング検出設定
