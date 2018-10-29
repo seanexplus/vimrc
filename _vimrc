@@ -122,6 +122,8 @@ Plug 'Raimondi/delimitMate'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'w0rp/ale'
 Plug 'mhinz/vim-signify'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
 " let g:mkdp_path_to_chrome = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
 
@@ -162,6 +164,11 @@ let g:ale_lint_on_insert_leave = 1
 let g:ale_linters = {'cpp': ['cppcheck'], 'java': ['javac']}
 let g:ale_c_cppcheck_options = ''
 let g:ale_cpp_cppcheck_options = ''
-" let g:airline#extensions#ale#enabled = 1
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚡'
+let g:airline#extensions#ale#enabled = 1
+" 設定airline theme
+let g:airline_theme = 'solarized'
+let g:airline_solarized_bg = 'dark'
 " 由於跟YCM的hotkey相衝，所以修改deLimitMe的熱鍵設定
 imap <C-K> <Plug>delimitMateS-Tab
