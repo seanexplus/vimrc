@@ -14,5 +14,6 @@ set printoptions=number:y,left:3pc,right:3pc,top:3pc,bottom:3pc
 "set guioptions-=L			" 画面縦分割時の左スクロールバーを非表示
 set guicursor+=a:blinkon1700-blinkoff700	" カーソルのブリンクをまったりさせる
 set linespace=0				" 行間を狭くする
-
+set guifont=Consolas:h12
+set guifontwide=細明體:h12
 " vim:set et ts=2 sw=0:
