@@ -91,7 +91,7 @@ noremap! <4-MiddleMouse> <Nop>
 
 "-------------------------------------------------------------------------------
 " 色彩模版的設定
-colorscheme torte
+colorscheme desert
 
 " ctag設定
 set tags=./.tags;,.tags
