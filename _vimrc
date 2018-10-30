@@ -124,6 +124,7 @@ Plug 'w0rp/ale'
 Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/LeaderF'
 " Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
 " let g:mkdp_path_to_chrome = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
 
@@ -170,5 +171,22 @@ let g:airline#extensions#ale#enabled = 1
 " 設定airline theme
 let g:airline_theme = 'solarized'
 let g:airline_solarized_bg = 'dark'
+" 設定LeadF 快速鍵與其它
+let g:Lf_ShortcutF = '<c-p>'
+let g:Lf_ShortcutB = '<m-n>'
+noremap <c-n> :LeaderfMru<cr>
+noremap <m-p> :LeaderfFunction!<cr>
+noremap <m-n> :LeaderfBuffer<cr>
+noremap <m-m> :LeaderfTag<cr>
+let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
+ 
+let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
+let g:Lf_WorkingDirectoryMode = 'Ac'
+let g:Lf_WindowHeight = 0.30
+let g:Lf_CacheDirectory = expand('~/.vim/cache')
+let g:Lf_ShowRelativePath = 0
+let g:Lf_HideHelp = 1
+" let g:Lf_StlColorscheme = 'powerline'
+let g:Lf_PreviewResult = {'Function':0, 'BufTag':0} 
 " 由於跟YCM的hotkey相衝，所以修改deLimitMe的熱鍵設定
 imap <C-K> <Plug>delimitMateS-Tab
