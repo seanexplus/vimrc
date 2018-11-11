@@ -126,6 +126,7 @@ Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/LeaderF'
+Plug 'justinmk/vim-dirvish'
 " Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
 " let g:mkdp_path_to_chrome = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
 
@@ -191,3 +192,7 @@ let g:Lf_HideHelp = 1
 let g:Lf_PreviewResult = {'Function':0, 'BufTag':0} 
 " 由於跟YCM的hotkey相衝，所以修改deLimitMe的熱鍵設定
 imap <C-K> <Plug>delimitMateS-Tab
+" netrw相關設定
+let loaded_netrwPlugin = 1
+" let g:netrw_liststyle = 3 " Tree mode
+" let g:netrw_banner = 0 " 關閉Banner
