@@ -104,7 +104,8 @@ catch /E411/
   hi CursorIM ctermfg=16 ctermbg=127 guifg=#000000 guibg=#af00af
 endtry
 
-
+" 載入matchit.vim 套件，用來強化原本的%指令
+packadd! matchit 
 " vim:set et ts=2 sw=0:
 " 初始化 vim-plug
 
