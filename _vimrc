@@ -26,6 +26,7 @@ set laststatus=2                  " 狀態列常駐
 set cmdheight=2                   " 減少hit-enter的次數? 需要理解文件!
 set number                        " 加入行號
 set tabstop=4                     " 設定tab 鍵的顯示長度為4
+set shiftwidth=4                  " 設定shift 操作移動的寬度，預設為8
 set autoread					  " 設定自動偵測檔案是否變動並更新
 
 if !has('gui_running')            " 偵測是否為gui 版的vim
