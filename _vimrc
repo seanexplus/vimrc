@@ -134,6 +134,8 @@ Plug 'justinmk/vim-dirvish'
 
 " 結束 vim-plug設定
 call plug#end()
+" vim-markdown相關設定
+let g:vim_markdown_fenced_language = [ 'c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'java=java', 'python=py']
 " 開啟gutentags的進階指令，通常用來Debug
 " let g:gutentags_define_advanced_commands = 1
 " gutentags 搜尋專案目錄的標記，遇到這些文件/目錄名稱就停止向上層目錄搜尋
