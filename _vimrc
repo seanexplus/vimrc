@@ -65,7 +65,7 @@ noremap! <4-MiddleMouse> <Nop>
 " let &statusline = "%<%f %m%r%h%w[%{&ff}][%{(&fenc!=''?&fenc:&enc).(&bomb?':bom':'')}] "
 " if has('iconv')
 "   let &statusline .= "0x%{FencB()}"
-" 
+"
 "   function! FencB()
 "     let c = matchstr(getline('.'), '.', col('.') - 1)
 "     if c != ''
@@ -105,7 +105,7 @@ catch /E411/
 endtry
 
 " 載入matchit.vim 套件，用來強化原本的%指令
-packadd! matchit 
+packadd! matchit
 " vim:set et ts=2 sw=0:
 " 初始化 vim-plug
 
@@ -128,6 +128,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/LeaderF'
 Plug 'justinmk/vim-dirvish'
+Plug 'ntpeters/vim-better-whitespace'
 " Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
 " let g:mkdp_path_to_chrome = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
 
@@ -184,7 +185,6 @@ noremap <m-p> :LeaderfFunction!<cr>
 noremap <m-n> :LeaderfBuffer<cr>
 noremap <m-m> :LeaderfTag<cr>
 let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
- 
 let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
 let g:Lf_WorkingDirectoryMode = 'Ac'
 let g:Lf_WindowHeight = 0.30
@@ -192,10 +192,13 @@ let g:Lf_CacheDirectory = expand('~/.vim/cache')
 let g:Lf_ShowRelativePath = 0
 let g:Lf_HideHelp = 1
 " let g:Lf_StlColorscheme = 'powerline'
-let g:Lf_PreviewResult = {'Function':0, 'BufTag':0} 
+let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 " 由於跟YCM的hotkey相衝，所以修改deLimitMe的熱鍵設定
 imap <C-K> <Plug>delimitMateS-Tab
 " netrw相關設定
-let loaded_netrwPlugin = 1
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+let g:loaded_netrwSettings = 1
+let g:loaded_netrwFileHandlers = 1
 " let g:netrw_liststyle = 3 " Tree mode
 " let g:netrw_banner = 0 " 關閉Banner
