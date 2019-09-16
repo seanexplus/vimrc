@@ -1,1 +1,1 @@
---disable-nls --enable-gui=no --enable-python3interp=dynamic --with-python3-command=python36 --enable-fail-if-missing --enable-cscope --enable-multibyte --with-features=huge --with-tlib=ncurses --without-x
+--disable-nls --enable-gui=no --enable-python3interp=dynamic --with-python3-command=python36 --with-python3-config-dir=/usr/lib64/python3.6/config --enable-fail-if-missing --enable-cscope --enable-multibyte --with-features=huge --with-tlib=ncurses --without-x
