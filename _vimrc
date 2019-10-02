@@ -109,7 +109,7 @@ packadd! matchit
 " vim:set et ts=2 sw=0:
 " 初始化 vim-plug
 
-call plug#begin('~\vimfiles\plugged')
+call plug#begin('~/vimfiles/plugged')
 
 " 安裝nerdtree
 
