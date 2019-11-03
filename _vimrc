@@ -169,12 +169,13 @@ let g:ale_lint_delay = 500
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
-let g:ale_linters = {'cpp': ['cppcheck'], 'java': ['javac'], 'javascript': ['eslint'],'css': ['prettier']}
-let g:ale_c_cppcheck_options = '--enable=all --std=c99'
-let g:ale_cpp_cppcheck_options = '--enable=all --std=c++17'
+" let g:ale_linters = {'javascript': ['eslint'],'css': ['prettier']}
+" let g:ale_c_cppcheck_options = '--enable=all --std=c99'
+" let g:ale_cpp_cppcheck_options = '--enable=all --std=c++17'
+" let g:ale_javascript_eslint_options = '--fix'
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚡'
-let g:ale_fixers = {'javascript': ['prettier', 'eslint']}
+" let g:ale_fixers = {'javascript': ['prettier', 'eslint']}
 let g:airline#extensions#ale#enabled = 1
 " 設定airline theme
 let g:airline_theme = 'solarized'
