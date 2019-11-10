@@ -16,4 +16,5 @@ set guicursor+=a:blinkon1700-blinkoff700	" カーソルのブリンクをまっ�
 set linespace=0				" 行間を狭くする
 set guifont=Consolas:h12
 set guifontwide=細明體:h12
+autocmd GUIEnter * simalt ~x
 " vim:set et ts=2 sw=0:
