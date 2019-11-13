@@ -54,6 +54,9 @@ augroup qf_win
   autocmd QuickfixCmdPost [^l]* copen
   " 所有l 開頭的fix指令就執行lopen
   autocmd QuickfixCmdPost l* lopen augroup END
+" 建立類似VSCode的錯誤清單瀏覽快速鍵
+nnoremap <f4> :<c-u>cnext<cr>
+nnoremap <s-f4> :<c-u>cprevious<cr>
 " 取消滑鼠滾輪的貼上動作 マウスの中央ボタンクリックによるクリップボードペースト動作を抑制する
 noremap <MiddleMouse> <Nop>
 noremap! <MiddleMouse> <Nop>
