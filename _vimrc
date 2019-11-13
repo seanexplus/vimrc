@@ -40,7 +40,10 @@ set nofixendofline                " Windowsのエディタの人達に嫌われ�
 set ambiwidth=double              " 讓CJK 語系中的全型字元，例如○, △, □的寬度是ASCII的兩倍
 set directory-=.                  " 將暫存檔目錄設定為vim 的目錄
 set formatoptions+=mM             " 日本語の途中でも折り返す
-let &grepprg="grep -rnIH --exclude=.git --exclude-dir=.hg --exclude-dir=.svn --exclude=tags"
+" let &grepprg="grep -rnIH --exclude=.git --exclude-dir=.hg --exclude-dir=.svn --exclude=tags"
+" 將原先使用的gnu grep 置換為ripgrep
+let &grepprg = "rg -nH -g \"!.git\" -g \"!.tags\" -g \"!.hg\" -g \"!.svn\" --vimgrep"
+let grepformat = "%f:%l:%c:%m,%f:%l:%m"
 let loaded_matchparen = 1         " 當遊標在括弧上的時候，不會突出對應的括弧 カーソルが括弧上にあっても括弧ペアをハイライトさせない
 
 " :grep 等でquickfixウィンドウを開く (:lgrep 等でlocationlistウィンドウを開く)
