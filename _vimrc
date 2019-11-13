@@ -197,7 +197,7 @@ let g:Lf_HideHelp = 1
 " let g:Lf_StlColorscheme = 'powerline'
 let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 " 由於跟YCM的hotkey相衝，所以修改deLimitMe的熱鍵設定
-imap <C-K> <Plug>delimitMateS-Tab
+imap <C-L> <Plug>delimitMateS-Tab
 " netrw相關設定
 let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
