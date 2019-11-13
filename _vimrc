@@ -47,12 +47,13 @@ let grepformat = "%f:%l:%c:%m,%f:%l:%m"
 let loaded_matchparen = 1         " 當遊標在括弧上的時候，不會突出對應的括弧 カーソルが括弧上にあっても括弧ペアをハイライトさせない
 
 " :grep 等でquickfixウィンドウを開く (:lgrep 等でlocationlistウィンドウを開く)
-"augroup qf_win
-"  autocmd!
-"  autocmd QuickfixCmdPost [^l]* copen
-"  autocmd QuickfixCmdPost l* lopen
-"augroup END
-
+augroup qf_win
+" 重置autocmd群組
+  autocmd!
+  " 所有不是l開頭的quick fix指令就執行copen
+  autocmd QuickfixCmdPost [^l]* copen
+  " 所有l 開頭的fix指令就執行lopen
+  autocmd QuickfixCmdPost l* lopen augroup END
 " 取消滑鼠滾輪的貼上動作 マウスの中央ボタンクリックによるクリップボードペースト動作を抑制する
 noremap <MiddleMouse> <Nop>
 noremap! <MiddleMouse> <Nop>
