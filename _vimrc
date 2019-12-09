@@ -29,6 +29,7 @@ set relativenumber                " 設定顯示相對行數
 set tabstop=4                     " 設定tab 鍵的顯示長度為4
 set shiftwidth=4                  " 設定shift 操作移動的寬度，預設為8
 set autoread					  " 設定自動偵測檔案是否變動並更新
+set clipboard+=unnamed            " 將無名暫存器加入系統剪貼簿，簡化剪貼操作
 
 if !has('gui_running')            " 偵測是否為gui 版的vim
   set mouse=                      " 取消支援滑鼠
