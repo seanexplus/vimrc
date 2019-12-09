@@ -8,10 +8,10 @@ scriptencoding utf-8
 set printoptions=number:y,left:3pc,right:3pc,top:3pc,bottom:3pc
 "set columns=90				" windowサイズの設定
 "set lines=35				" windowサイズの設定
-"set guioptions-=m			" メニューバーを非表示
-"set guioptions-=T			" ツールバーを非表示
-"set guioptions-=r			" 右スクロールバーを非表示
-"set guioptions-=L			" 画面縦分割時の左スクロールバーを非表示
+set guioptions-=m			" 不顯示選單列
+set guioptions-=T			" 不顯示工具列
+set guioptions-=r			" 不顯示右側Scroll bar
+set guioptions-=L			" 垂直分割時不顯示左側Scroll bar
 set guicursor+=a:blinkon1700-blinkoff700	" カーソルのブリンクをまったりさせる
 set linespace=0				" 行間を狭くする
 set guifont=Consolas:h12
