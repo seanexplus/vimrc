@@ -34,7 +34,7 @@ set clipboard+=unnamed            " 將無名暫存器加入系統剪貼簿，�
 if !has('gui_running')            " 偵測是否為gui 版的vim
   set mouse=                      " 取消支援滑鼠
   set ttimeoutlen=0               " 將模式轉換時的畫面更新設定為最快
-  if $COLORTERM == "truecolor"    " 偵測是否是支援True Color的終端機？
+  if $COLORTERM == "truecolor" || $OS == "Windows_NT"	" 偵測是否是支援True Color的終端機？
     set termguicolors
   endif
 endif
