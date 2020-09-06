@@ -138,8 +138,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/LeaderF'
 Plug 'justinmk/vim-dirvish'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' },
-Plug 'tyru/caw.vim',
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'tyru/caw.vim'
 Plug 'Shougo/context_filetype.vim'
 " Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
 " let g:mkdp_path_to_chrome = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
