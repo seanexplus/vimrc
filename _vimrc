@@ -55,10 +55,16 @@ augroup qf_win
   " 所有不是l開頭的quick fix指令就執行copen
   autocmd QuickfixCmdPost [^l]* copen
   " 所有l 開頭的fix指令就執行lopen
-  autocmd QuickfixCmdPost l* lopen augroup END
-" 建立類似VSCode的錯誤清單瀏覽快速鍵
-nnoremap <f4> :<c-u>cnext<cr>
-nnoremap <s-f4> :<c-u>cprevious<cr>
+  autocmd QuickfixCmdPost l* lopen
+  " 建立類似VSCode的錯誤清單瀏覽快速鍵並根據開啟的quickfix 視窗是否為Location List重新設定相關快捷鍵
+  " autocmd FileType qf if getwininfo(win_getid())[0]['loclist']
+  "              \ |     nnoremap <f4> :<c-u>lnext<cr>
+  "              \ |     nnoremap <s-f4> :<c-u>lprevious<cr>
+		"		\ |   else
+  "              \ |     nnoremap <f4> :<c-u>cnext<cr>
+  "              \ |     nnoremap <s-f4> :<c-u>cprevious<cr>
+  "              \ |   endif
+augroup END
 " 取消滑鼠滾輪的貼上動作 マウスの中央ボタンクリックによるクリップボードペースト動作を抑制する
 noremap <MiddleMouse> <Nop>
 noremap! <MiddleMouse> <Nop>
@@ -147,9 +153,9 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'tpope/vim-unimpaired'
 
 " 結束 vim-plug設定
 call plug#end()
