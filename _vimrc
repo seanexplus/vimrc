@@ -124,7 +124,7 @@ packadd! matchit
 " vim:set et ts=2 sw=0:
 " 初始化 vim-plug
 
-call plug#begin('~/vimfiles/plugged')
+call plug#begin('~/.vim/plugged')
 
 " 安裝nerdtree
 
@@ -200,6 +200,7 @@ let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚡'
 " let g:ale_fixers = {'javascript': ['prettier', 'eslint']}
 let g:airline#extensions#ale#enabled = 1
+let g:airline_powerline_fonts = 1
 " 設定airline theme
 let g:airline_theme = 'solarized'
 let g:airline_solarized_bg = 'dark'
@@ -323,6 +324,7 @@ if executable('gopls')
 	        \ })
 	autocmd BufWritePre *.go LspDocumentFormatSync
 endif
+let g:lsp_diagnostics_echo_cursor = 1
 " 加入vsnip的key mapping
 " Expand
 imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
