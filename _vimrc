@@ -209,20 +209,42 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'solarized'
 let g:airline_solarized_bg = 'dark'
 " 設定LeadF 快速鍵與其它
-let g:Lf_ShortcutF = '<c-p>'
-let g:Lf_ShortcutB = '<m-n>'
-noremap <c-n> :LeaderfMru<cr>
-noremap <m-p> :LeaderfFunction!<cr>
-noremap <m-n> :LeaderfBuffer<cr>
-noremap <m-m> :LeaderfTag<cr>
-let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
+let mapleader = '`'
+let g:Lf_ShortcutF = '<leader>ff'
+noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
+noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
+noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
+" 參考網頁https://github.com/Yggdroot/LeaderF/wiki/Leaderf-rg
+noremap <C-B> :<C-U><C-R>=printf("Leaderf! rg --current-buffer -e %s ", expand("<cword>"))<CR>
+noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
+" search visually selected text literally
+xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
+noremap go :<C-U>Leaderf! rg --recall<CR>
+" let g:Lf_ShortcutB = '<m-n>'
+" noremap <c-n> :LeaderfMru<cr>
+" noremap <m-p> :LeaderfFunction!<cr>
+" noremap <m-n> :LeaderfBuffer<cr>
+" noremap <m-m> :LeaderfTag<cr>
+let g:Lf_GtagsAutoGenerate = 0
+let g:Lf_GtagsGutentags = 1
+" 記得要pip install pygments才能讓ctag支援其它語言，mac可用homebrew安裝
+let g:Lf_Gtagslabel = 'native-pygments'
+" noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
+" noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
+" noremap <leader>fo :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
+" noremap <leader>fn :<C-U><C-R>=printf("Leaderf gtags --next %s", "")<CR><CR>
+" noremap <leader>fp :<C-U><C-R>=printf("Leaderf gtags --previous %s", "")<CR><CR>
 let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
 let g:Lf_WorkingDirectoryMode = 'Ac'
-let g:Lf_WindowHeight = 0.30
+let g:Lf_WindowPosition = 'popup'
+let g:Lf_PreviewInPopup = 1
+" let g:Lf_WindowHeight = 0.30
 let g:Lf_CacheDirectory = expand('~/.vim/cache')
 let g:Lf_ShowRelativePath = 0
 let g:Lf_HideHelp = 1
-" let g:Lf_StlColorscheme = 'powerline'
+let g:Lf_StlColorscheme = 'powerline'
+let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
 let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 " 由於跟vsnip 的hotkey相衝，所以修改deLimitMe的熱鍵設定
 imap <C-e> <Plug>delimitMateS-Tab
