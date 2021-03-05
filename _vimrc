@@ -137,6 +137,7 @@ Plug 'vim-scripts/dbext.vim', { 'for': 'sql' }
 " Plug 'Valloric/YouCompleteMe'
 Plug 'Raimondi/delimitMate'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/gutentags_plus'
 Plug 'w0rp/ale'
 Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
@@ -172,15 +173,24 @@ let g:gutentags_ctags_tagfile = '.tags'
 " 將自動生成的tags檔案放在~/.cache/tags 目錄，避免污染專案目錄
 let s:vim_tags = expand('~/.cache/tags')
 let g:gutentags_cache_dir = s:vim_tags
-
+let $GTAGSLABEL = 'native-pygments'
+let $GTAGSCONF = '/opt/homebrew/Cellar/global/6.6.5/share/gtags/gtags.conf'
 " 設定ctags的參數
 let g:gutentags_modules = []
 if executable('ctags')
 	let g:gutentags_modules += ['ctags']
 endif
-let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+if executable('gtags-cscope') && executable('gtags')
+	let g:gutentags_modules += ['gtags_cscope']
+endif
+let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extras=+q']
 let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+" 如果使用 universal ctags 需要增加下面一行，老的 Exuberant-ctags 不能加下一行
+let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
+" " 禁用 gutentags 自动加载 gtags 数据库的行为
+let g:gutentags_auto_add_gtags_cscope = 0
+let g:gutentags_plus_switch = 1
 
 " 確認 ~/.cache/tags 不存在的話就產生
 if !isdirectory(s:vim_tags)
@@ -204,6 +214,7 @@ let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚡'
 " let g:ale_fixers = {'javascript': ['prettier', 'eslint']}
 let g:airline#extensions#ale#enabled = 1
+" let g:airline#extenss#gutentags#enabled = 1
 let g:airline_powerline_fonts = 1
 " 設定airline theme
 let g:airline_theme = 'solarized'
