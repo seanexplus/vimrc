@@ -291,10 +291,10 @@ augroup lsp_install
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 " 設定c/c++ lsp
-if executable('clangd')
+if executable('/opt/homebrew/Cellar/llvm/11.1.0/bin/clangd')
     au User lsp_setup call lsp#register_server({
 	    \ 'name': 'clangd',
-	    \ 'cmd': {server_info->['clangd', '-background-index']},
+	    \ 'cmd': {server_info->['/opt/homebrew/Cellar/llvm/11.1.0/bin/clangd', '-background-index', '--std=c++20']},
 	    \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
 	    \ })
 endif
